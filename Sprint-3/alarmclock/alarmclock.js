@@ -1,6 +1,11 @@
 let countdownInterval;  // We use this to store the interval and stop it later
 
 function setAlarm() {
+  // Clear any previous intervals before starting a new one
+  if (countdownInterval) {
+    clearInterval(countdownInterval);
+  }
+  
   let timeRemaining = parseInt(document.getElementById("alarmSet").value);  // Get the time from the input
   
   let displayTime = "00:";  // Start with "00:"
